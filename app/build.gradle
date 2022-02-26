@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":albums"))
 
     implementation(libs.androidx.core.ktx)
