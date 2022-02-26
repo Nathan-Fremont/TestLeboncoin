@@ -17,6 +17,12 @@ plugins {
     id 'org.jetbrains.kotlin.android' version libs.versions.kotlin apply false
 }
 
+subprojects {
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
