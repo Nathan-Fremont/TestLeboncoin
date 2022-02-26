@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+}
+
+dependencies {
+    implementation(project(":core"))
+
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.activity)
+
+    implementation(libs.bundles.ktor.android)
+    implementation(libs.bundles.koin.android)
+
+    implementation(libs.serialization.android)
+    implementation(libs.jackson)
+
+    testImplementation(project(":coreTest"))
+    testImplementation(libs.bundles.common.test)
+    testImplementation(libs.bundles.junit.jupiter)
+    testRuntimeOnly(libs.testing.junit.jupiter.engine)
+}

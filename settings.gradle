@@ -21,3 +21,4 @@ rootProject.name = "TestLeboncoin"
 include ':app'
 include ':core'
 include ':coreTest'
+include ':albums'
