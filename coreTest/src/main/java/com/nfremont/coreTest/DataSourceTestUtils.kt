@@ -1,4 +1,4 @@
-package com.nfremont.mangareader.core
+package com.nfremont.coreTest
 
 import io.ktor.client.*
 import io.ktor.client.engine.mock.*

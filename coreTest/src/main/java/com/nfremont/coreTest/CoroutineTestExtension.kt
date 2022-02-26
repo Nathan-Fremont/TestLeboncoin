@@ -1,4 +1,4 @@
-package com.nfremont.mangareader.core
+package com.nfremont.coreTest
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
