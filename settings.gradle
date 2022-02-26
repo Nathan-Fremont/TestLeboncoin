@@ -12,5 +12,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+// Enabled "version catalog", that uses "libs.versions.toml" to manage dependencies
+// Used https://blog.stylingandroid.com/gradle-version-catalogs/ for tutorial
+enableFeaturePreview("VERSION_CATALOGS")
+
 rootProject.name = "TestLeboncoin"
 include ':app'
