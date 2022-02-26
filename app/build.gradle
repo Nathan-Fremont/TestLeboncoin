@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.activity)
     implementation(libs.bundles.androidx.compose)
+    implementation(libs.coilCompose)
 
     implementation(libs.bundles.ktor.android)
     implementation(libs.bundles.koin.android)

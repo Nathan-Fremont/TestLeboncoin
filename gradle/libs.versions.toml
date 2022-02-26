@@ -9,6 +9,8 @@ material = "1.4.0"
 androidx-lifecycle-runtime = "2.4.0"
 androidx-activity = "1.4.0"
 compose = "1.1.0-rc01"
+coilCompose = "1.4.0"
+
 kotlinSerialization = "1.3.2"
 jackson = "2.13.1"
 
@@ -36,6 +38,8 @@ androidx-activity = { module = "androidx.activity:activity-compose", version.ref
 androidx-composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose"}
 androidx-composeMaterial = { module = "androidx.compose.material:material", version.ref = "compose" }
 androidx-composeUiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin" }
 
