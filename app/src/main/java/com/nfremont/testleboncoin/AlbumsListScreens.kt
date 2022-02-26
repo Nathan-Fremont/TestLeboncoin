@@ -1,14 +1,12 @@
 package com.nfremont.testleboncoin
 
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -40,11 +38,14 @@ fun AlbumsList(albums: List<AlbumsItem>) {
                             }
                         ),
                         contentDescription = null,
-                        modifier = Modifier.size(128.dp)
+                        modifier = Modifier
+                            .size(128.dp)
+                            .padding(all = 8.dp)
                     )
 
-                    Text(text = album.title, style = Typography.body1)
-
+                    Text(text = album.title,
+                        style = Typography.body1,
+                        modifier = Modifier.padding(all = 8.dp))
                 }
             }
         }
@@ -52,11 +53,12 @@ fun AlbumsList(albums: List<AlbumsItem>) {
 }
 
 @Composable
-@Preview
+@Preview(name = "Dark mode", uiMode = UI_MODE_NIGHT_YES, widthDp = 100, heightDp = 100)
+@Preview(name = "Light mode", uiMode = UI_MODE_NIGHT_NO, widthDp = 100, heightDp = 100)
 fun AlbumsListPreview() {
     TestLeboncoinTheme {
         // A surface container using the 'background' color from the theme
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+        Surface(modifier = Modifier.fillMaxSize()) {
             AlbumsList(albums = listOf(
                 AlbumsItem(
                     albumId = 1,
