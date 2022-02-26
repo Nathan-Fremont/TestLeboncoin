@@ -19,3 +19,4 @@ enableFeaturePreview("VERSION_CATALOGS")
 
 rootProject.name = "TestLeboncoin"
 include ':app'
+include ':core'
