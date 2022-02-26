@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TestLeboncoin</string>
+
+    <string name="albums_list_default">No call made, that should not happen</string>
+    <string name="albums_list_error">WS call finished in error, that also should not happen</string>
 </resources>
