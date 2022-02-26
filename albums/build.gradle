@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -7,16 +7,11 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.nfremont.testleboncoin"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,42 +27,22 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion libs.versions.compose.get()
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-    implementation(project(":albums"))
+    implementation(project(":core"))
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.activity)
-    implementation(libs.bundles.androidx.compose)
 
     implementation(libs.bundles.ktor.android)
     implementation(libs.bundles.koin.android)
-    implementation(libs.bundles.common)
+
     implementation(libs.serialization.android)
     implementation(libs.jackson)
 
+    testImplementation(project(":coreTest"))
     testImplementation(libs.bundles.common.test)
     testImplementation(libs.bundles.junit.jupiter)
     testRuntimeOnly(libs.testing.junit.jupiter.engine)
-
-    debugImplementation(libs.testing.compose.manifest)
-
-    androidTestImplementation(libs.testing.androidx.junit)
-    androidTestImplementation(libs.testing.espresso.core)
-    androidTestImplementation(libs.testing.compose.ui)
 }
